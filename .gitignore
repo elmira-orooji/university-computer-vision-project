@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+ui/preview*.png
+node_modules/
+ui/frontend/.vite/
+*.tsbuildinfo

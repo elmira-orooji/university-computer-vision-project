@@ -4,6 +4,20 @@ A Python coursework project that reads PNG files into a pixel matrix and reconst
 
 The implementation works directly with the PNG file format: it reads chunk data, decompresses image data, reverses PNG scanline filters, supports Adam7 interlacing, and writes a new PNG with valid PNG chunks and CRC values.
 
+## UI preview
+
+![Pixel Studio: PNG inspection, pixel matrix, zoom, dark theme, and image reconstruction](docs/assets/ui-demo.gif)
+
+## Interactive web interface
+
+A Persian, right-to-left UI built with [Dig Design System](https://www.digdesign.ir/) is available for both conversion directions. Inspect individual pixels, explore a matrix window, zoom the image, and download the complete matrix or reconstructed PNG. Light and dark themes are included.
+
+```bash
+python ui/server.py
+```
+
+Open [http://127.0.0.1:8766](http://127.0.0.1:8766/). The prebuilt interface is served by Python without additional runtime packages; React frontend development uses Node and npm. See the [web interface guide](ui/README.md) for file-size limits, temporary results, format details, and tests. The original command-line workflow below remains available.
+
 ## Features
 
 - Validates the PNG signature and reads `IHDR`, `IDAT`, `PLTE`, `tRNS`, and `IEND` chunks.

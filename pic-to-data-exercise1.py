@@ -62,7 +62,7 @@ def unpack_bits(byte_data, bit_depth, pixels_count):
 
 #--------------------Convert PNG to Matrix---------------------------------------------
 
-def read_full_png(filepath):
+def read_full_png(filepath, *, return_data=False):
     with open(filepath, 'rb') as f:
         if f.read(8) != b'\x89PNG\r\n\x1a\n':
             raise ValueError("Error! this PNG file is not valid")
@@ -157,6 +157,10 @@ def read_full_png(filepath):
             for x_pass in range(pw):
                 actual_x = p['x0'] + x_pass * p['dx']
                 final_matrix[actual_y][actual_x] = processed_pixels[x_pass]
+
+    if return_data:
+        return {'matrix': final_matrix, 'width': width, 'height': height,
+                'bit_depth': bit_depth, 'color_type': color_type, 'interlace': interlace}
 
     out_filename = filepath + '_matrix.txt'
     with open(out_filename, 'w') as f:

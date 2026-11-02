@@ -1,0 +1,38 @@
+/* ==================================================================== *
+ * برندِ پروژه
+ *
+ * این فایل مالِ پروژه است و دیگ هیچ‌وقت آن را بازنویسی نمی‌کند؛ تمِ دیگ در
+ * dig-theme.css است و با «dig update theme» به‌روز می‌شود.
+ *
+ * چه چیزی اینجا می‌آید:
+ *   ۱) رمپِ برند (--brand-*، لایهٔ ۲)؛ Shade ۶۰۰ همان --primary است.
+ *   ۲) لایهٔ محصول: فقط توکن‌های معنایی‌ای که با پیش‌فرضِ دیگ فرق دارند
+ *      (--background، --foreground، --radius، --font-anchor، سایه‌ها، ...).
+ *   ۳) توکن‌های تازهٔ خودِ محصول داخل @theme inline.
+ *
+ * رمپ را می‌شود دوباره از یک رنگ ساخت:  npx digdesign theme brand "#2C4C5B"
+ * ==================================================================== */
+
+
+/* نمونه:
+:root {
+  --brand-600: #2c4c5b;
+  --radius: 0.75rem;
+}
+*/
+
+/* IRANSansX is the selected product font. Licensed files can be added here.
+   Until supplied, the existing locally bundled OFL font is the fallback. */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../../../fonts/Vazirmatn-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("../../../fonts/Vazirmatn-Bold.ttf") format("truetype");
+  font-weight: 600 900;
+  font-display: swap;
+}
+:root { --font-anchor: "IRANSansX", "Vazirmatn"; }

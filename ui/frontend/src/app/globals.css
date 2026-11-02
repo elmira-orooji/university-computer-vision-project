@@ -1,0 +1,14 @@
+/* فقط import. تم در dig-theme.css (مالِ دیگ) و برند در brand.css (مالِ
+   پروژه) است؛ ترتیب مهم است: برند بعد از تم می‌آید تا برنده باشد. */
+@import "./dig-theme.css";
+@import "./brand.css";
+
+.pixel-checker {
+  background-color: var(--background);
+  background-image: conic-gradient(var(--muted) 25%, var(--background) 0 50%, var(--muted) 0 75%, var(--background) 0);
+  background-size: calc(var(--spacing) * 4) calc(var(--spacing) * 4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
